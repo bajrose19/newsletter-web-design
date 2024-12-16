@@ -1,153 +1,261 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-  <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-<!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>The Hawk's Nest</title>
 
-<!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Document</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/">
+  
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+  <link href="styles_rose.css" rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
-        <div class="navbar">
-            <h2>Navbar</h2>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-   
-    <div class="wrapper">
-        <header class="main-head"><div class="header-content">
-          <img src="data:image/jpeg;base64,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" alt="School Logo" class="logo">
-          <div class="header-text">
-              <h1>School Newsletter</h1>
-              <p>Building a Stronger Future, Together</p>
-              <p class="date">December 2024</p>
-          </div>
-      </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </header>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="">Sports News </a></li>
-            <li><a href="">Club News </a></li>
-            <li><a href="">CTE Programs</a></li>
-          </ul>
-        </nav>
-        <article class="content">
-          <section id="cte-programs" style="background-color:#f4f4f4; padding: 40px 20px; font-family: Arial, sans-serif;">
-            <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-                <h2 style="font-size: 36px; color: #2C3E50;">Career and Technical Education (CTE) Programs</h2>
-                <p style="font-size: 18px; color: #555; margin-bottom: 30px;">
-                    At <strong>Information Technoloy High School</strong>, our Career and Technical Education (CTE) programs are designed to equip students with practical skills, knowledge, and experience needed to succeed in today’s rapidly evolving job market. These hands-on programs offer students the opportunity to explore a wide range of career pathways while earning industry certifications, gaining real-world experience, and preparing for both college and future careers.
-                </p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-                    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                        <h3 style="font-size: 24px; color: #2C3E50;">Health Sciences</h3>
-                        <p style="color: #555;">Explore careers in healthcare, including medical assisting, nursing, and emergency medical services (EMS).</p>
-                    </div>
-                    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                        <h3 style="font-size: 24px; color: #2C3E50;">Information Technology</h3>
-                        <p style="color: #555;">Gain expertise in computer programming, network administration, and cybersecurity to excel in the digital workforce.</p>
-                    </div>
-                    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                        <h3 style="font-size: 24px; color: #2C3E50;">Business and Marketing</h3>
-                        <p style="color: #555;">Learn about entrepreneurship, marketing strategies, accounting, and business management for future success.</p>
-                    </div>
-                    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                        <h3 style="font-size: 24px; color: #2C3E50;">Engineering and Manufacturing</h3>
-                        <p style="color: #555;">Develop skills in design, robotics, and advanced manufacturing technologies for careers in engineering and construction.</p>
-                    </div>
-                    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                        <h3 style="font-size: 24px; color: #2C3E50;">Hospitality and Culinary Arts</h3>
-                        <p style="color: #555;">Learn the art of cooking, hospitality management, and event planning for careers in the food service and tourism industries.</p>
-                    </div>
-                    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                        <h3 style="font-size: 24px; color: #2C3E50;">Agricultural Science</h3>
-                        <p style="color: #555;">Gain hands-on experience in farming, animal care, and sustainable agricultural practices for careers in the environmental sciences.</p>
-                    </div>
-                </div>
-        
-                <p style="font-size: 16px; color: #555; margin-top: 30px;">
-                    Through rigorous coursework, internships, and industry partnerships, our CTE programs offer students not just academic knowledge, but the essential skills that employers value most—problem-solving, teamwork, communication, and technical proficiency.
-                </p>
-                <p style="font-size: 16px; color: #555;">
-                    Whether students are looking to enter the workforce directly after graduation or pursue higher education in their chosen field, our CTE programs provide a solid foundation for success. At <strong>Information Technoloy High School</strong>, we are committed to helping students achieve their career goals and build the future they envision.
-                </p>
-            </div>
-        </section>
-        
-          </p>
-        </article>
-        <aside class="side">Sidebar</aside>
-        <div class="ad">Advertising</div>
-       
-       
-       
-       
-       
-       
-        <footer class="main-footer" style="background-color:#f4f4f4; padding: 20px; text-align:center; font-family: Arial, sans-serif;">
-          <div style="max-width: 1200px; margin: 0 auto;">
-              <p style="font-size: 14px; color: #333; margin: 0;">&copy; 2024 Information Technology High School. All rights reserved.</p>
-              <div style="margin-top: 10px;">
-                  <a href="mailto:contact@schoolname.com" style="text-decoration: none; color: #007BFF;">Contact Us</a> |
-                  <a href="/privacy-policy" style="text-decoration: none; color: #007BFF;">Privacy Policy</a> |
-                  <a href="/terms-of-service" style="text-decoration: none; color: #007BFF;">Terms of Service</a>
-              </div>
-              <div style="margin-top: 15px;">
-                  <p style="font-size: 12px; color: #555;">Follow us on:</p>
-                  <a href="https://facebook.com/SchoolName" target="_blank" style="text-decoration: none; margin: 0 10px; color: #4267B2;">
-                      <i class="fab fa-facebook"></i> Facebook
-                  </a>
-                  <a href="https://twitter.com/SchoolName" target="_blank" style="text-decoration: none; margin: 0 10px; color: #1DA1F2;">
-                      <i class="fab fa-twitter"></i> Twitter
-                  </a>
-                  <a href="https://instagram.com/SchoolName" target="_blank" style="text-decoration: none; margin: 0 10px; color: #E4405F;">
-                      <i class="fab fa-instagram"></i> Instagram
-                  </a>
-              </div>
-          </div>
-      </footer>
-    </div>
-      
-    </div>
-    <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
-    
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-    
-        <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Info </a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+   <!-- navbar -->
+  <div class="flex-box">
+    <div id="nav-icon"><img src="https://s3.us-west-1.amazonaws.com/ufile.jupitered.com/f2811884/1692603836/ITHS-Logo.png"></div>
+    <div id="bar">
+        <ul>
+          <li><a href="https://infotechhs.net/#go">Home</a></li>
+          <li><a href="https://login.jupitered.com/login/">Students</a></li>
+          <li><a href="#">Parents</a></li>
+          <li><a href="#">Staff</a></li>
+          <li><a href="sports.html">Athletics</a></li>
+          <li><a href="#">About Us</a></li>
         </ul>
-      </footer>
+  </div>
+</div>
+<h1 class="nav-title">The Hawk's Nest</h1>
+
+
+<div class="row">
+<div class="column">
+</div>
+ <!-- the div for intro card -->
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark d-flex align-items-center">
+  <div class="col-md-8 px-0">
+    <h1 class="display-4 font title-text">Welcome to ITHS's CTE Department Newsletter!</h1>
+    <p class="lead my-3">At Information Technoloy High School, our Career and Technical Education (CTE) programs are designed to equip students with practical skills, knowledge, and experience needed to succeed in today’s rapidly evolving job market.</p>
+    <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+  </div>
+  <div class="col-md-4">
+    <img class="img-fluid" src="web design.jpg" alt="Web Design">
+  </div>
+</div>
+ <!-- the 2 new update cards on our school -->
+    <div class="row mb-2">
+      <div class="col-md-6 card-size">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-primary">Update</strong>
+            <h3 class="mb-0">
+              <a class="text-dark" href="#">Featured Post</a>
+            </h3>
+            <div class="mb-1 text-muted">Sep 20</div>
+            <p class="card-text mb-auto">Advanced tech equipment at graphic design! We've upgraded the computers and room for the student's better learning.</p>
+            <a class="black"href="#">Continue reading...</a>
+          </div>
+          <img class="card-img-right flex-auto d-none d-md-block" src="graphic.jpg" data-holder-rendered="true" style="width: 200px; height: 250px;">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-success">New Addition</strong>
+            <h3 class="mb-0">
+              <a class="text-dark" href="#">Cyber Security and Robotics!</a>
+            </h3>
+            <div class="mb-1 text-muted">Sep 13</div>
+            <p class="card-text mb-auto">In addition to our original first 3 academies, we have decided to add Cyber Security and Robotics!</p>
+            <a class="black"href="#">Continue reading...</a>
+          </div>
+          <img class="card-img-right flex-auto d-none d-md-block" src="e-robotics_lab_pillars.jpg" data-holder-rendered="true" style="width: 200px; height: 250px;">
+        </div>
+      </div>
     </div>
+  </div>
+
+
+ <!-- basically like an article sorta -->
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <h3 class="pb-3 mb-4 font-italic border-bottom">
+          From the Hawks Themselves...
+        </h3>
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">Join our CTE departments today!</h2>
+          <p class="blog-post-meta">December 11, 2024 by <a href="#">Rose</a></p>
+
+          <p>In this post, I'll be explaining which academy does what, and from there on you should choose one that best aligns with your career goals/interests!</p>
+          <hr>
+          <p>At ITHS, we prioritize your future career goals. When choosing your CTE major here in high school, they should best fit <strong><em>YOU</em></strong> as a person both in and outside of the career path you take.</p>
+          <blockquote>
+           
+          </blockquote>
+          <h2>Video Production</h2>
+          <p>Creative industries today offer a variety of career paths, each catering to unique skills and interests. Among these, video production stands out as a dynamic field, combining technical expertise with storytelling to create compelling content.</p>
+          <hr>
+          <p>A career in video production can lead to diverse opportunities across industries, from entertainment and advertising to education and social media. Professionals in this field may start as video editors, camera operators, or production assistants and eventually move into roles such as producers or directors. Many students are drawn to this path because of its blend of creativity and technology, allowing them to work on everything from commercials and music videos to documentaries and feature films. With the growing demand for video content in digital marketing and online platforms, video production offers a promising and ever-expanding career path.</p>
+          <img class="thumbnails"src="video.jpg">
+
+
+
+          <h2>Web Design</h2>
+          <p>The digital age has made web design an essential skill for creating and maintaining an effective online presence. As a career, it combines creativity with technical expertise to build visually appealing and user-friendly websites that connect businesses, organizations, and individuals with their audiences.</p>
+          <hr>
+          <p>A career in web design offers a wide range of opportunities in industries like technology, marketing, and e-commerce. Web designers may start by creating basic layouts or templates and eventually grow into specialized roles such as user experience (UX) designers, front-end developers, or creative directors. They use coding languages like HTML, CSS, and JavaScript to help produce this. </p>
+          <pre><code><!DOCTYPE html>
+            <html>
+            <head>
+              <style>
+                .attention {
+                  font-size: 24px;
+                  color: white;
+                  background-color: red;
+                  padding: 10px 20px;
+                  text-align: center;
+                  animation: blink 1s infinite;
+                }
+            
+                @keyframes blink {
+                  0%, 100% { opacity: 1; }
+                  50% { opacity: 0; }
+                }
+              </style>
+            </head>
+            <body>
+              <div class="attention">Don’t Miss Out!</div>
+            </body>
+            </html></code></pre>
+          <p>Many students are drawn to this field because it blends artistic design with problem-solving and coding skills. As businesses increasingly rely on strong online platforms to succeed, web design continues to be a sought-after and rewarding career path.</p>
+          
+          <h2>Graphic Design</h2>
+          <p>Creative industries provide numerous opportunities for individuals with an eye for aesthetics and a passion for visual storytelling. Graphic design is one such field that merges creativity and technology to craft visually appealing and impactful designs.</p>
+          <hr>
+          <p>A career in graphic design opens doors to roles in branding, advertising, web design, and print media. Graphic designers often begin as junior designers, creating logos, brochures, or social media graphics, and can advance to roles such as art directors or creative leads. Many students are attracted to this field because it allows them to bring ideas to life through color, typography, and imagery. With the rise of digital marketing and the constant need for visually engaging content, graphic design remains a versatile and in-demand career path.</p>
+          
+          
+        </div><!-- /.blog-post -->
+
+        <!-- <div class="blog-post">
+          <h2 class="blog-post-title">Another blog post</h2>
+          <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
+
+          <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+          <blockquote>
+            <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          </blockquote>
+          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        </div>
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">New feature</h2>
+          <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
+
+          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <ul>
+            <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+            <li>Donec id elit non mi porta gravida at eget metus.</li>
+            <li>Nulla vitae elit libero, a pharetra augue.</li>
+          </ul>
+          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+        </div>
+
+      </div>--><!-- /.blog-main -->
+
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-3 mb-3 bg-light rounded">
+          <h4 class="font-italic">About</h4>
+          <p class="mb-0">In <em>Information Technology High School,</em> we help allow our students to pursue the field of technology, whether it be the artistic aspect like Graphic Design and Videology. In our hands, your child will have higher advantage in these fields!</p>
+        </div>
+  
+        <div class="p-3">
+          <h4 class="font-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">March 2024</a></li>
+            <li><a href="#">February 2023</a></li>
+            <li><a href="#">January 2022</a></li>
+            <li><a href="#">December 2013</a></li>
+          </ol>
+        </div>
+  
+        <div class="p-3">
+          <h4 class="font-italic">More Links You Can Find Us</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://infotechhs.net/">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+      </aside><!-- /.blog-sidebar -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+  </main><!-- /.container -->
+
+
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/vendor/holder.min.js"></script>
+  <script>
+    Holder.addTheme('thumb', {
+      bg: '#55595c',
+      fg: '#eceeef',
+      text: 'Thumbnail'
+    });
+  </script>
+
+
+<div class="container">
+  <footer class="py-5">
+    <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="https://infotechhs.net/" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="https://login.jupitered.com/login/" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Subscribe to our newsletter!</h5>
+          <p>Updates of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address" spellcheck="false" data-ms-editor="true">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© 2024 Information Technology High School. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
 </body>
 </html>
