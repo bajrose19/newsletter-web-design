@@ -139,7 +139,7 @@ img{
 }
 
 .blog-sidebar {
-  position: relative;
+  position: right;
   margin-top: 20px;
 }
 
@@ -147,4 +147,8 @@ img{
   .blog-sidebar {
     margin-top: 20px;
   }
+}
+
+.size-H1{
+  font-size:35px;
 }
